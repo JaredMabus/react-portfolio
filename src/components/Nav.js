@@ -21,7 +21,7 @@ const navData = [
     {
         id: 0,
         name: "About Me",
-        link: "/about-me",
+        link: "/",
     },
     {
         id: 1,
@@ -69,17 +69,18 @@ const Nav = () => {
         <Box sx={{
             display: 'flex',
             justifyContent: 'end',
-            flexGrow: 1,
+            // flexGrow: 1,
             m: 0,
-            p: 0
+            py: 1
         }}>
-            <AppBar position="static">
+            <AppBar position="static" elevation={0}>
                 <Toolbar
                     sx={{
                         display: 'flex',
                         justifyContent: 'end',
                         alignItems: 'center',
                         backgroundColor: '#0D1117',
+
                     }}
                     disableGutters={true}
                 >
@@ -106,7 +107,7 @@ const Nav = () => {
                     </Typography>
                 </Toolbar>
             </AppBar>
-        </Box>
+        </Box >
     );
 }
 
