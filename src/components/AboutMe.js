@@ -34,7 +34,7 @@ const AboutMe = () => {
                         pl: 1.5,
                         maxWidth: { xs: '100%', md: '50%' }
                     }}
-                    variant='subtitle1'>Data analyst and web developer who loves to build applications and solve problems. Not only do I enjoy looking for statistical findings, but I also find great joy in the use of technology and programming languages to manage, analyze, and tell stories with data.
+                    variant='subtitle1'>Data analyst and web developer who loves to build applications and solve problems. Not only do I enjoy looking for statistical findings, I also find joy in using technology and programming languages to manage, analyze, and tell stories with data.
                 </Typography>
             </Box>
         </>
