@@ -10,6 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<page.Home />} />
+          <Route path="/projects" element={<page.Project />} />
           <Route path="*" element={<page.Home />} />
         </Routes>
       </BrowserRouter>

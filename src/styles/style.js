@@ -5,13 +5,13 @@ const theme = createTheme({
         mode: "dark",
         primary: {
             main: "#78E3B1",
-            light: "#62615f",
-            dark: "#292826",
+            light: "#A2EBC8",
+            dark: "#58B488",
         },
         secondary: {
             main: "#EEB405",
-            light: "#f1c337",
-            dark: "#a67d03",
+            light: "#21262E",
+            dark: "#0D1117",
         },
     },
     typography: {
@@ -19,13 +19,28 @@ const theme = createTheme({
         allVariants: {
             color: "#E5E5E5",
         },
+        h1: {
+            fontWeight: 500
+        },
+        h2: {
+            fontWeight: 500
+        },
+        h3: {
+            fontWeight: 500
+        },
+        h4: {
+            fontWeight: 600
+        },
+        body: {
+            fontSize: 18
+        },
         fontFamily: [
             "Montserrat",
             "sans-serif",
         ].join(","),
         button: {
             textTransform: "none",
-            fontWeight: "bold",
+            fontWeight: 700,
         },
     },
     breakpoints: {
