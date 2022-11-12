@@ -1,4 +1,3 @@
-import { useState } from "react";
 import theme from "../styles/style";
 import Nav from "../components/Nav";
 import AboutMe from "../components/AboutMe";

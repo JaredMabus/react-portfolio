@@ -1,10 +1,14 @@
-import { useState } from "react";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import ProjectGrid from "./components/ProjectGrid";
+import { projectData } from "./projectData";
+import {
+    Box,
+    Container,
+    Typography,
+    Stack
+} from '@mui/material';
+
 
 const Project = () => {
     return (
@@ -20,8 +24,10 @@ const Project = () => {
                 maxWidth="xl"
             >
                 <Nav />
-                <Typography variant="h3">Projects</Typography>
-
+                <Stack sx={{ minWidth: '100%', display: 'flex' }} direction='column'>
+                    <Typography sx={{ alignSelf: 'center', p: 1, mb: 3 }} variant="h3">Projects</Typography>
+                    <ProjectGrid data={projectData} />
+                </Stack>
             </Container>
             <Footer />
         </Container>
