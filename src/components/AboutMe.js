@@ -1,8 +1,10 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import theme from "../styles/style";
+import { useTheme } from '@mui/material/styles';
 
 const AboutMe = () => {
+    const theme = useTheme();
+
     return (
         <>
             <Box

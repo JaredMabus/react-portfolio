@@ -1,14 +1,18 @@
-import * as React from 'react';
+import { useState, useContext } from 'react';
+import { ThemeContext } from '../App';
 import { NavLink } from "react-router-dom";
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import { styled } from "@mui/material/styles";
-
+import LightDarkSwitch from "./ThemeSwitchBtn";
+import {
+    Box,
+    AppBar,
+    Toolbar,
+    Typography,
+    Button,
+} from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import navData from "./navData";
+import SideNav from "./SideNav";
 
 const StyledNavLink = styled(NavLink)(
     ({ theme }) => `
@@ -17,45 +21,22 @@ const StyledNavLink = styled(NavLink)(
     `
 );
 
-const navData = [
-    {
-        id: 0,
-        name: "About Me",
-        link: "/",
-    },
-    {
-        id: 1,
-        name: "Projects",
-        link: "/projects",
-    },
-    {
-        id: 2,
-        name: "Contact",
-        link: "/contact",
-    },
-    {
-        id: 3,
-        name: "Resume",
-        link: "/resume",
-    },
-
-]
-
 const NavItem = ({ item }) => {
+    const theme = useTheme();
+
     return <StyledNavLink
-        to={item.link}
-        // onClick={handleNavMenu}
+        to={item.url}
         style={({ isActive }) =>
             isActive
                 ? {
                     textDecoration: "none",
-                    color: '#78E3B1',
-                    borderBottom: "1px solid #78E3B1",
+                    color: theme.palette.primary.dark,
+                    borderBottom: `1px solid ${theme.palette.primary.dark}`,
                     transition: '250ms ease-in-out'
                 }
                 : {
                     textDecoration: "none",
-                    color: "#E5E5E5",
+                    color: theme.palette.text.primary,
                     borderBottom: "1px solid rgba(0,0,0,0)",
                 }
         }
@@ -65,37 +46,36 @@ const NavItem = ({ item }) => {
 };
 
 const Nav = () => {
+    const { toggleTheme } = useContext(ThemeContext);
+    const [state, setState] = useState({
+        left: false,
+    });
+    const toggleDrawer = (anchor, open) => (event) => {
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+            return;
+        }
+        setState({ ...state, [anchor]: open });
+    };
+
     return (
         <Box sx={{
             display: 'flex',
             justifyContent: 'end',
-            // flexGrow: 1,
             m: 0,
             py: 1
         }}>
-            <AppBar position="static" elevation={0}>
+            <AppBar sx={{ background: 'transparent', }} position="static" elevation={0}>
                 <Toolbar
                     sx={{
                         display: 'flex',
                         justifyContent: 'end',
                         alignItems: 'center',
-                        backgroundColor: '#0D1117',
+                        background: 'transparent',
 
                     }}
                     disableGutters={true}
                 >
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{
-                            mr: 2,
-                            display: { xs: "flex", sm: 'none' }
-                        }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
+                    <SideNav state={state} toggleDrawer={toggleDrawer} navData={navData} />
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         <Box
                             sx={{
@@ -105,10 +85,11 @@ const Nav = () => {
                             {navData.map(item => <NavItem key={item.id} item={item} />)}
                         </Box>
                     </Typography>
+                    <Button sx={{ mr: '100px' }} onClick={(toggleTheme)}><LightDarkSwitch /></Button>
                 </Toolbar>
             </AppBar>
         </Box >
     );
 }
 
-export default Nav
+export default Nav;
