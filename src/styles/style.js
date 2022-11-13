@@ -1,23 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
-const theme = createTheme({
-    palette: {
-        mode: "dark",
-        primary: {
-            main: "#78E3B1",
-            light: "#A2EBC8",
-            dark: "#58B488",
-        },
-        secondary: {
-            main: "#21262E",
-            light: "#21262E",
-            dark: "#0D1117",
-        },
-    },
+const otherThemes = {
     typography: {
-        allVariants: {
-            color: "#E5E5E5",
-        },
         h1: {
             fontWeight: 500
         },
@@ -50,8 +34,55 @@ const theme = createTheme({
             lg: 1200,
             xl: 1536,
         },
+    }
+}
+
+export const themeLight = createTheme({
+    ...otherThemes,
+    palette: {
+        mode: "light",
+        background: {
+            default: '#fafafa'
+        },
+        text: {
+            primary: "#21262E"
+        },
+        primary: {
+            main: "#78E3B1",
+            light: "#A2EBC8",
+            dark: "#58B488",
+        },
+        secondary: {
+            main: "#EFF3F7",
+            light: "#eeee",
+            dark: "#C1C1C1",
+        },
+        action: {
+            textDecoration: 'none',
+            color: '#78e3b1',
+        }
     },
 });
 
-
-export default theme;
+export const themeDark = createTheme({
+    ...otherThemes,
+    palette: {
+        mode: "dark",
+        background: {
+            default: 'rgb(13, 17, 23)'
+        },
+        text: {
+            primary: "#E5E5E5"
+        },
+        primary: {
+            main: "#78E3B1",
+            light: "#A2EBC8",
+            dark: "#58B488",
+        },
+        secondary: {
+            main: "#21262E",
+            light: "#21262E",
+            dark: "#0D1117",
+        },
+    }
+});

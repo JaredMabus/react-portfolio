@@ -4,19 +4,20 @@ import JATE from "../../assets/images/JATE.svg";
 import SocialNetwork from "../../assets/images/SocialNetwork.svg";
 import WeatherApp from "../../assets/images/WeatherApp.svg";
 import NoteTaker from "../../assets/images/NoteTaker.svg";
+import FindingFido from "../../assets/images/FindingFido.svg";
 
 
 export const projectData = [
     {
         id: 1,
-        title: 'Weather Dashboard',
-        desc: 'A work day scheduler webpage.',
+        title: 'Finding Fido',
+        desc: 'Finding Fido is a web application that utilizes the Petfinder API.',
         techStack: [],
-        githubUrl: 'https://github.com/JaredMabus/weather-dashboard',
+        githubUrl: 'https://github.com/hoffh-5334/finding-fido',
         designUrl: null,
         docUrl: null,
-        img: WeatherApp,
-        url: 'https://jaredmabus.github.io/weather-dashboard/',
+        img: FindingFido,
+        url: 'https://hoffh-5334.github.io/finding-fido/',
         cardSize: 6
     },
     {

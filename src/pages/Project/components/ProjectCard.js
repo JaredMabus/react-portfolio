@@ -6,7 +6,7 @@ import {
 } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import { styled } from "@mui/material/styles";
-import theme from "../../../styles/style";
+import { useTheme } from '@mui/material/styles';
 // ICONS
 import GitHubIcon from '@mui/icons-material/GitHub';
 import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
@@ -45,6 +45,7 @@ const CardButton = styled(Button)(({ theme }) => ({
 
 
 const ProjectCard = ({ data }) => {
+    const theme = useTheme();
     return (
         <>
             <Grid
