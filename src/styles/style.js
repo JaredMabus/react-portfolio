@@ -84,5 +84,9 @@ export const themeDark = createTheme({
             light: "#21262E",
             dark: "#0D1117",
         },
+        action: {
+            textDecoration: 'none',
+            color: '#78e3b1',
+        }
     }
 });

@@ -16,7 +16,7 @@ const Socials = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    p: 1,
+                    p: .5,
                     borderRadius: "0px 0px 4px 10px",
                     backgroundColor: '#78E3B1',
                     'svg': {
@@ -37,7 +37,6 @@ const Socials = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    // width: '100%',
                     px: 10,
                     backgroundColor: '#E5E5E5',
                     borderRadius: "0 0 10rem 10rem",

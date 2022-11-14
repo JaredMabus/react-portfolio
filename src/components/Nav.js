@@ -58,11 +58,12 @@ const Nav = () => {
     };
 
     return (
-        <Box sx={{
+        <Box maxWidth='xl' sx={{
             display: 'flex',
             justifyContent: 'end',
             m: 0,
             py: 1
+
         }}>
             <AppBar sx={{ background: 'transparent', }} position="static" elevation={0}>
                 <Toolbar
