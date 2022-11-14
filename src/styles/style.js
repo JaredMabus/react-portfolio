@@ -14,6 +14,9 @@ const otherThemes = {
         h4: {
             fontWeight: 600
         },
+        h5: {
+            fontWeight: 600
+        },
         body: {
             fontSize: 18
         },
@@ -48,7 +51,8 @@ export const themeLight = createTheme({
             primary: "#21262E"
         },
         primary: {
-            main: "#78E3B1",
+            // main: "#78E3B1",
+            main: "#58B488",
             light: "#A2EBC8",
             dark: "#58B488",
         },
@@ -60,7 +64,20 @@ export const themeLight = createTheme({
         action: {
             textDecoration: 'none',
             color: '#78e3b1',
-        }
+        },
+        components: {
+            // Name of the component
+            MuiButton: {
+              styleOverrides: {
+                // Name of the slot
+                root: {
+                  // Some CSS
+                  fontSize: '4rem',
+                  color: 'red'
+                },
+              },
+            },
+          },
     },
 });
 
@@ -87,6 +104,19 @@ export const themeDark = createTheme({
         action: {
             textDecoration: 'none',
             color: '#78e3b1',
-        }
+        },
+        components: {
+            // Name of the component
+            MuiButton: {
+              styleOverrides: {
+                // Name of the slot
+                root: {
+                  // Some CSS
+                  fontSize: '4rem',
+                  color: 'red'
+                },
+              },
+            },
+        },
     }
 });
