@@ -4,7 +4,6 @@ import {
     Stack,
     Paper
 } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2';
 import { styled } from "@mui/material/styles";
 import { useTheme } from '@mui/material/styles';
 // ICONS
@@ -18,8 +17,8 @@ const Card = styled(Paper)(({ theme }) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
     height: 325,
-    boxShadow: 'rgb(25 25 25 / 25%) 1px 2px 3px 2px',
-    border: `1px solid ${theme.palette.secondary.main}45`,
+    boxShadow: 'rgb(25 25 25 / 20%) 1px 2px 3px 2px',
+    border: `1px solid ${theme.palette.secondary.main}`,
     transition: '250ms ease-in-out',
     cursor: 'pointer',
     ":hover ": {
@@ -46,38 +45,33 @@ const CardButton = styled(Button)(({ theme }) => ({
 
 const ProjectCard = ({ data }) => {
     const theme = useTheme();
+
     return (
         <>
-            <Grid
-                xs={12}
-                sm={6}
-                lg={4}
-            >
-                <Card>
-                    <Stack
-                        direction='row'
-                        id="card-menu"
-                        sx={{
-                            display: 'flex',
-                            alignItems: 'start',
-                            justifyContent: 'space-between',
-                            backgroundColor: theme.palette.secondary.light,
-                            borderRadius: '4px 4px 0px 0px',
-                            p: 1.5,
-                            maxHeight: 62.5
-                        }}
-                    >
-                        <Typography sx={{ fontWeight: 'bold' }} align='center' variant="h6">{data.title}</Typography>
-                        <Stack id='card-btn-stack' sx={{ visibility: 'hidden' }} direction='row' spacing={1}>
-                            <CardButton target="_blank" href={data.githubUrl}><GitHubIcon />Code</CardButton>
-                            {data.designUrl && (<CardButton><BrushOutlinedIcon />Design</CardButton>)}
-                        </Stack>
+            <Card>
+                <Stack
+                    direction='row'
+                    id="card-menu"
+                    sx={{
+                        display: 'flex',
+                        alignItems: 'start',
+                        justifyContent: 'space-between',
+                        backgroundColor: theme.palette.secondary.light,
+                        borderRadius: '4px 4px 0px 0px',
+                        p: 1.5,
+                        maxHeight: 62.5
+                    }}
+                >
+                    <Typography sx={{ fontWeight: 'bold' }} align='center' variant="h6">{data.title}</Typography>
+                    <Stack id='card-btn-stack' sx={{ visibility: 'hidden' }} direction='row' spacing={1}>
+                        <CardButton target="_blank" href={data.githubUrl}><GitHubIcon />Code</CardButton>
+                        {data.designUrl && (<CardButton><BrushOutlinedIcon />Design</CardButton>)}
                     </Stack>
-                    <Stack id='project-desc' sx={{ visibility: 'hidden', p: 2 }} direction='column' spacing={1}>
-                        <Typography variant='body1'>{data.desc}</Typography>
-                    </Stack>
-                </Card>
-            </Grid>
+                </Stack>
+                <Stack id='project-desc' sx={{ visibility: 'hidden', p: 2 }} direction='column' spacing={1}>
+                    <Typography variant='body1'>{data.desc}</Typography>
+                </Stack>
+            </Card >
         </>
     )
 }

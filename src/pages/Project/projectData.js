@@ -6,7 +6,6 @@ import WeatherApp from "../../assets/images/WeatherApp.svg";
 import NoteTaker from "../../assets/images/NoteTaker.svg";
 import FindingFido from "../../assets/images/FindingFido.svg";
 
-
 export const projectData = [
     {
         id: 1,
