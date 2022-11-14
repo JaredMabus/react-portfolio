@@ -1,8 +1,6 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-
 
 
 const Socials = () => {
@@ -16,7 +14,6 @@ const Socials = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    // p: .5,
                     px: .5,
                     pt: 2,
                     mr: 1,

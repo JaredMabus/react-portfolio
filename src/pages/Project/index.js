@@ -1,15 +1,10 @@
-import Nav from "../../components/Nav";
-import Footer from "../../components/Footer";
+import PageContainer from "../../components/PageContainer";
 import ProjectGrid from "./components/ProjectGrid";
 import { projectData } from "./projectData";
 import {
-    Box,
-    Container,
     Typography,
     Stack
 } from '@mui/material';
-import PageContainer from "../../components/PageContainer";
-
 
 const Project = () => {
     return (
