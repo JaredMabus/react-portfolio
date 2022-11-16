@@ -1,9 +1,9 @@
-import Box from '@mui/material/Box';
-import Socials from "../components/Socials";
+import Box from "@mui/material/Box";
+import Socials from "./Socials";
 import { styled } from "@mui/material/styles";
 
 const FooterContainer = styled(Box)(
-    ({ theme }) => `
+  ({ theme }) => `
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -16,19 +16,18 @@ const FooterContainer = styled(Box)(
     `
 );
 
-
 const Footer = () => {
-    return (
-        <FooterContainer>
-            {/* <Box
+  return (
+    <FooterContainer>
+      {/* <Box
                 sx={{
                     width: '100%'
                 }}
             > */}
-            <Socials />
-            {/* </Box> */}
-        </FooterContainer>
-    )
-}
+      <Socials />
+      {/* </Box> */}
+    </FooterContainer>
+  );
+};
 
 export default Footer;

@@ -68,16 +68,16 @@ export const themeLight = createTheme({
         components: {
             // Name of the component
             MuiButton: {
-              styleOverrides: {
-                // Name of the slot
-                root: {
-                  // Some CSS
-                  fontSize: '4rem',
-                  color: 'red'
+                styleOverrides: {
+                    // Name of the slot
+                    root: {
+                        // Some CSS
+                        fontSize: '4rem',
+                        color: 'red'
+                    },
                 },
-              },
             },
-          },
+        },
     },
 });
 
@@ -98,7 +98,7 @@ export const themeDark = createTheme({
         },
         secondary: {
             main: "#21262E",
-            light: "#21262E",
+            light: "#30353D",
             dark: "#0D1117",
         },
         action: {
@@ -108,14 +108,14 @@ export const themeDark = createTheme({
         components: {
             // Name of the component
             MuiButton: {
-              styleOverrides: {
-                // Name of the slot
-                root: {
-                  // Some CSS
-                  fontSize: '4rem',
-                  color: 'red'
+                styleOverrides: {
+                    // Name of the slot
+                    root: {
+                        // Some CSS
+                        fontSize: '4rem',
+                        color: 'red'
+                    },
                 },
-              },
             },
         },
     }
