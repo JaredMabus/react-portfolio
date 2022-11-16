@@ -1,9 +1,11 @@
 import Home from "./Home";
 import Project from "./Project";
 import Contact from "./Contact";
+import Resume from "./Resume";
 
-export { 
-    Home, 
+export {
+    Home,
     Project,
-    Contact 
+    Contact,
+    Resume
 }

@@ -23,6 +23,7 @@ function App() {
             <Route path="/" element={<page.Home />} />
             <Route path="/projects" element={<page.Project />} />
             <Route path="/contact" element={<page.Contact />} />
+            <Route path="/resume" element={<page.Resume />} />
             <Route path="*" element={<page.Home />} />
           </Routes>
         </BrowserRouter>
