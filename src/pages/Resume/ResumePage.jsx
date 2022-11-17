@@ -166,16 +166,11 @@ export default function ResumePage() {
   const theme = useTheme();
   return (
     <>
-      <Box sx={{ justifySelf: "end", alignSelf: "end", mt: 5, mb: 1 }}>
-        <a href="Resume_old.pdf" download>
-          <Button>
-            <DownloadIcon fontSize="small" />
-            Download
-          </Button>
-        </a>
-      </Box>
       <Stack
         sx={{
+          position: "relative",
+          justifySelf: "center",
+          alignSelf: "center",
           backgroundColor:
             theme.palette.mode === "dark"
               ? theme.palette.secondary.main
@@ -183,11 +178,28 @@ export default function ResumePage() {
           px: { xs: 3, sm: 7 },
           pt: 7,
           pb: 20,
+          mt: 5,
           mb: 10,
+          maxWidth: 1000,
           borderRadius: 2,
           boxShadow: "rgba(0 0 0 / 10%) 2px 2px 5px 2px",
         }}
       >
+        <Box
+          sx={{
+            position: "absolute",
+            justifySelf: "end",
+            alignSelf: "end",
+            top: 20,
+          }}
+        >
+          <a href="Resume_old.pdf" download>
+            <Button>
+              <DownloadIcon fontSize="small" />
+              Download
+            </Button>
+          </a>
+        </Box>
         <Stack
           sx={{
             p: 1,
@@ -197,15 +209,35 @@ export default function ResumePage() {
           <Stack
             sx={{
               gap: { xs: 1, sm: 2 },
+              mt: 0.4,
+              mb: 0.7,
+              pl: 0.5,
               flexDirection: { xs: "column", sm: "row" },
             }}
             divider={<Divider orientation="vertical" flexItem />}
           >
-            <Typography variant="subtitle1">jwmabusth@gmail.com</Typography>
-            <Typography variant="subtitle1">Github</Typography>
+            <Link
+              style={{
+                textDecoration: "none",
+                color: theme.palette.text.primary,
+              }}
+              onClick={() => (window.location = "mailto:jwmabusth@gmail.com")}
+            >
+              jwmabusth@gmail.com
+            </Link>
+            <Link
+              style={{
+                textDecoration: "none",
+                color: theme.palette.text.primary,
+              }}
+              href="https://github.com/JaredMabus"
+            >
+              GitHub
+            </Link>
+            <Typography variant="body1">Minneapolis, MN</Typography>
           </Stack>
           {resumeData.map((section) => (
-            <Stack sx={{ py: 3 }} key={section.id}>
+            <Stack sx={{ py: 2 }} key={section.id}>
               <Typography
                 sx={{
                   fontWeight: 600,

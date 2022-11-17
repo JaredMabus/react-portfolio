@@ -11,7 +11,6 @@ import {
   FormHelperText,
   InputLabel,
 } from "@mui/material";
-import validate from "./validate";
 import { useTheme } from "@mui/material/styles";
 import { useSpring, animated } from "@react-spring/web";
 import SimCardDownloadIcon from "@mui/icons-material/SimCardDownload";
@@ -31,14 +30,6 @@ export default function Resume() {
       <PageContainer>
         <animated.div style={animateStyles}>
           <Stack sx={{ justifySelf: "center", height: "100%" }}>
-            {/* <Typography variant="h5">Resume</Typography> */}
-            {/* <a href="Resume_old.pdf" download>
-              <Button>
-                {" "}
-                <SimCardDownloadIcon />
-                Download
-              </Button>{" "}
-            </a> */}
             <ResumePage />
           </Stack>
         </animated.div>

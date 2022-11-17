@@ -29,7 +29,7 @@ const resumeData = [
                 endDate: '6/1/2020',
                 jobSummary: 'Contracted with Ameriprise to work on a large department consolidation project and to improve material review workflow processes.',
                 content: [
-                    'Procured web-usage data and designed Excel dashboards to Identify web assets with low ROI ',
+                    'Procured web-usage data and designed Excel dashboards to identify web assets with low ROI ',
                     'Forecasted future capacity needs by establishing a year-over-year growth rate and workflow KPIs',
                     'Developed MS Access application providing a front and back-end solution for department consolidation; greatly reducing material audit time',
                     'Collaborated with team leaders to create and standardize process documentation'

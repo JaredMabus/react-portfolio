@@ -22,7 +22,7 @@ export const projectData = [
     {
         id: 2,
         title: 'Code Quiz',
-        desc: 'This project is code quiz webpage.',
+        desc: 'This project is a code quiz webpage.',
         techStack: [],
         githubUrl: 'https://github.com/JaredMabus/code-quiz',
         designUrl: null,

@@ -1,17 +1,17 @@
-import { useState, createContext } from 'react';
+import { useState, createContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import * as page from "./pages";
 import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
-import CssBaseline from '@mui/material/CssBaseline';
+import CssBaseline from "@mui/material/CssBaseline";
 import { themeLight, themeDark } from "./styles/style";
 
-export const ThemeContext = createContext()
+export const ThemeContext = createContext();
 
 function App() {
   const [light, setTheme] = useState(false);
 
   const toggleTheme = () => {
-    setTheme(!light)
+    setTheme(!light);
   };
 
   return (
