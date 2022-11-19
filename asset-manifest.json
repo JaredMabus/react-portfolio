@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-portfolio/static/css/main.7411cce4.css",
+    "main.js": "/react-portfolio/static/js/main.d0738ccf.js",
+    "static/js/787.a2cb61a6.chunk.js": "/react-portfolio/static/js/787.a2cb61a6.chunk.js",
+    "static/media/ProfilePic.svg": "/react-portfolio/static/media/ProfilePic.eaa1c9ccb5d69db95829cdc92d906a68.svg",
+    "static/media/MMHD.svg": "/react-portfolio/static/media/MMHD.0871fc1db0f53268883a9e8782e72ff3.svg",
+    "static/media/SocialNetwork.svg": "/react-portfolio/static/media/SocialNetwork.83278dd67cbe329c9042c4c9d0df031c.svg",
+    "static/media/CodeQuiz.svg": "/react-portfolio/static/media/CodeQuiz.2f1d4a113a0f3a88b4d94b4e9ed39128.svg",
+    "static/media/EmployeeCMS.svg": "/react-portfolio/static/media/EmployeeCMS.01f41ab8a31f5640ce062a156577c856.svg",
+    "static/media/JATE.svg": "/react-portfolio/static/media/JATE.b830916cc52752efbaf4aad0b84ff8d5.svg",
+    "static/media/FindingFido.svg": "/react-portfolio/static/media/FindingFido.480afb9598a810e757df7f8196c4f90c.svg",
+    "index.html": "/react-portfolio/index.html",
+    "main.7411cce4.css.map": "/react-portfolio/static/css/main.7411cce4.css.map",
+    "main.d0738ccf.js.map": "/react-portfolio/static/js/main.d0738ccf.js.map",
+    "787.a2cb61a6.chunk.js.map": "/react-portfolio/static/js/787.a2cb61a6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7411cce4.css",
+    "static/js/main.d0738ccf.js"
+  ]
+}
