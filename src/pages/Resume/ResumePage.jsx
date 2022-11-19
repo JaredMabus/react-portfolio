@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 import DownloadIcon from "@mui/icons-material/Download";
 import resumeData from "./resumeData";
+import resume from "../../assets/images/Resume_old.pdf";
 
 const TechnicalSkills = ({ data }) => {
   const theme = useTheme();
@@ -180,7 +181,7 @@ export default function ResumePage() {
             top: 20,
           }}
         >
-          <a href="Resume_old.pdf" download>
+          <a href={resume} download="JaredMabusth Resume.pdf">
             <Button>
               <DownloadIcon fontSize="small" />
               Download
