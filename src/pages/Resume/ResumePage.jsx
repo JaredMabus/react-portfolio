@@ -1,16 +1,4 @@
-import {
-  Box,
-  Button,
-  Stack,
-  Typography,
-  TextField,
-  FormControl,
-  Input,
-  FormHelperText,
-  InputLabel,
-  Divider,
-  Chip,
-} from "@mui/material";
+import { Box, Button, Stack, Typography, Divider, Chip } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 import DownloadIcon from "@mui/icons-material/Download";
@@ -75,12 +63,12 @@ const TechnicalSkills = ({ data }) => {
 
 const ProfessionalExperience = ({ data }) => {
   const theme = useTheme();
+
   const dateOptions = {
-    // weekday: "long",
     year: "numeric",
     month: "short",
-    // day: "numeric",
   };
+
   return (
     <Stack
       direction="row"
@@ -109,10 +97,9 @@ const ProfessionalExperience = ({ data }) => {
                 >
                   {job.employer},
                 </Typography>
-                <Typography align="center" variant="body">
+                <Typography align="center" variant="body1">
                   {job.location}
                 </Typography>
-                <Typography align="center" variant="body"></Typography>
               </Stack>
               <Typography
                 variant="subtitle1"
@@ -225,15 +212,17 @@ export default function ResumePage() {
             >
               jwmabusth@gmail.com
             </Link>
-            <Link
+            <a
+              href="https://github.com/JaredMabus?tab=repositories"
+              target="_blank"
+              rel="noreferrer"
               style={{
                 textDecoration: "none",
                 color: theme.palette.text.primary,
               }}
-              href="https://github.com/JaredMabus"
             >
               GitHub
-            </Link>
+            </a>
             <Typography variant="body1">Minneapolis, MN</Typography>
           </Stack>
           {resumeData.map((section) => (

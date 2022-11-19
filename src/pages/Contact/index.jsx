@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PageContainer from "../../components/PageContainer";
 import {
   Box,
@@ -6,10 +6,6 @@ import {
   Stack,
   Typography,
   TextField,
-  FormControl,
-  Input,
-  FormHelperText,
-  InputLabel,
   Alert,
   AlertTitle,
 } from "@mui/material";
@@ -66,16 +62,21 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const validateData = async () => {
-    setError(validate(formData));
-    return validate(formData);
+  const runValidation = async (data = null) => {
+    if (data !== null) {
+      setError(validate(data, error));
+      return;
+    }
+    setError(validate(formData, error));
+    return validate(formData, error);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let error = await validateData();
+    let err = await runValidation(null, error);
 
-    if (Object.keys(error).length === 0) {
+    if (Object.keys(err).length === 0) {
+      console.log("Successfully Submitted Message!");
       console.log(formData);
       toggleAlert();
       setFormData({
@@ -83,6 +84,7 @@ export default function Contact() {
         email: "",
         message: "",
       });
+      setError({});
     } else {
       console.log(error);
     }
@@ -116,38 +118,34 @@ export default function Contact() {
                 Contact
               </Typography>
               <Stack sx={{ width: "100%" }} spacing={4}>
-                <FormControl error={error.name ? true : false}>
-                  <InputLabel htmlFor="name-input">Name</InputLabel>
-                  <Input
-                    type="text"
-                    id="name-input"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    label="Name"
-                  />
-                  {error.name && (
-                    <FormHelperText id="name-input-ht">
-                      {error.name}
-                    </FormHelperText>
-                  )}
-                </FormControl>
-                <FormControl error={error.email ? true : false}>
-                  <InputLabel htmlFor="email-input">Email</InputLabel>
-                  <Input
-                    type="email"
-                    id="email-input"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    label="Email"
-                  />
-                  {error.email && (
-                    <FormHelperText id="name-input-ht">
-                      {error.email}
-                    </FormHelperText>
-                  )}
-                </FormControl>
+                <TextField
+                  type="text"
+                  label="Name"
+                  variant="standard"
+                  id="name-input"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  onBlur={(e) => {
+                    runValidation({ [e.target.name]: e.target.value });
+                  }}
+                  error={error.name ? true : false}
+                  helperText={error.name ? `${error.name}` : ""}
+                />
+                <TextField
+                  type="email"
+                  id="email-input"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  onBlur={(e) => {
+                    runValidation({ [e.target.name]: e.target.value });
+                  }}
+                  label="Email"
+                  variant="standard"
+                  error={error.email ? true : false}
+                  helperText={error.email ? `${error.email}` : ""}
+                />
                 <TextField
                   id="message-input"
                   name="message"

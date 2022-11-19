@@ -25,7 +25,7 @@ const ProjectCard = ({ data }) => {
 
   return (
     <>
-      <a href={data.url}>
+      <a href={data.url} target="_blank" rel="noreferrer">
         <Paper
           sx={{
             position: "relative",
@@ -42,7 +42,7 @@ const ProjectCard = ({ data }) => {
             borderRadius: "4px",
             transition: "150ms ease-in-out",
             transform: "scale(0.99)",
-            height: 350,
+            width: "100%",
             minHeight: 350,
             maxHeight: 350,
             cursor: "pointer",
@@ -84,7 +84,13 @@ const ProjectCard = ({ data }) => {
               direction="row"
               spacing={1}
             >
-              <CardButton target="_blank" href={data.githubUrl}>
+              <CardButton
+                onClick={() => {
+                  data?.githubUrl !== null &&
+                    window.open(data.githubUrl, "_blank");
+                }}
+                target="_blank"
+              >
                 <GitHubIcon />
                 Code
               </CardButton>
@@ -117,26 +123,6 @@ const ProjectCard = ({ data }) => {
           >
             <Typography variant="body1">{data.desc}</Typography>
           </Stack>
-          {/* <Box
-              component="img"
-              src={data.img}
-              sx={{
-                // top: 0,
-                // left: 0,
-                width: "100%",
-                // height: "100%",
-                // minHeight: "100%",
-                // maxWidth: "100%",
-                // maxHeight: "300px",
-                filter: `contrast(.8)`,
-                objectFit: "cover",
-                // objectPosition: "center",
-                // img: {
-                //   width: "100%",
-                //   height: "100%",
-                // },
-              }}
-            /> */}
         </Paper>
       </a>
     </>

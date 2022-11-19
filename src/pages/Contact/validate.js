@@ -1,17 +1,29 @@
-export default function validate(data) {
-    const error = {};
-
-    if (data.name.length === 0) {
-        error.name = 'Please provide your name'
+export default function validate(data, error) {
+    const err = { ...error }
+    if ('name' in data && data.name.length === 0) {
+        err.name = 'Please provide your name'
+    } else if ('name' in data && isValidName(data.name)) {
+        delete err.name
     }
 
-    if (data.email.length === 0) {
-        error.email = 'Please provide an email'
-    } else if (!validateEmail(data.email)) {
-        error.email = 'Please provide a valid email'
+    if ('email' in data && data.email.length === 0) {
+        err.email = 'Please provide an email'
+    } else if ('email' in data && !validateEmail(data.email)) {
+        err.email = 'Please provide a valid email'
+    } else if ('email' in data && validateEmail(data.email)) {
+        delete err.email
     }
 
-    return error;
+    return err;
+}
+
+
+const isValidName = (name) => {
+    if (typeof name === 'string' && name.length > 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 const validateEmail = (email) => {
