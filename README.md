@@ -4,7 +4,7 @@ This is a portfolio website built using React. The portfolio allows visitors to 
 
 # Deployment
 
-Gitpages: [Link]()
+Gitpages: [Link](https://JaredMabus.github.io/react-portfolio)
 
 # Screenshot
 
@@ -14,4 +14,12 @@ Gitpages: [Link]()
 
 ```sh
 npm i
+```
+
+## Usage
+
+Deploy on GitHub Pages
+
+```sh
+npm run deploy
 ```
